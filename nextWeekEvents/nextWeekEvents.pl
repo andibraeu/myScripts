@@ -6,6 +6,7 @@ use iCal::Parser;
 use DateTime;
 use POSIX qw(strftime);
 use Encode qw(decode encode);
+use utf8;
 #use Data::Dumper;
 
 #######
@@ -85,7 +86,7 @@ $nntp->post() or croak('post() failure',&EX_TEMPFAIL);
 $nntp->datasend(\@headers) or croak('datasend() header failure',"1");
 
 #while (<>) {
-  $nntp->datasend(encode("iso-8859-1",$body))or croak('datasend() body failure',"1");
+  $nntp->datasend(encode("UTF8",$body))or croak('datasend() body failure',"1");
 #}
 
 #$nntp->debug(1);		# if error exit code, log to maillog (STDERR)
