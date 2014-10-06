@@ -77,6 +77,7 @@ $body .= "Weitere Informationen und Termine findest Du unter " . $url . ", auf u
 push @headers,"From: Weimarnetz Wiki <do_not_reply\@weimarnetz.de>\n";
 push @headers,"Newsgroups: ". $newsgroup ."\n";
 push @headers,"Subject: ". $subject ."\n";
+push @headers,"Content-Type: text/plain; charset=\"UTF-8\"\n";
 push @headers,"\n";
 
 
